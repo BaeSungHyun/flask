@@ -1,0 +1,14 @@
+{% extends "/layout.html" %}
+
+<!-- '-' means to 빈 공백 제거 in html -->
+{% block title -%}
+Index
+{%- endblock %}
+
+{% block head -%}
+    {{ super() }} <!-- inherits parent html -->
+{%- endblock %}
+
+{% block body -%}
+<h1>hello guys~~</h1>
+{%- endblock %}
