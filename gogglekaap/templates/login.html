@@ -1,5 +1,8 @@
 <form action="{{ url_for('login') }}" method="POST" accept-charset="utf-8">
     <!--<gogglekaap.forms.auth_form.LoginForm object at 0x7fddcd9ef6a0>-->
-    {{ form }}
-
+    {{ form.csrf_token }}
+    {{ form.user_id.label }}{{ form.user_id(minlength=4, maxlength=20) }}
+    {{ form.password.label }}{{ form.password(maxlength=20) }}
+    {{ form.errors }}
+    <input type="submit" value="Go">
 </form>
