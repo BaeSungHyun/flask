@@ -3,10 +3,10 @@ from wtforms import StringField, PasswordField
 from wtforms.validators import DataRequired, EqualTo
 
 class LoginForm(FlaskForm):
-    user_id = StringField("User ID", validators=[DataRequired()])
+    user_id = StringField("User ID", validators=[DataRequired()]) # First is 'label'
     password = PasswordField("Password", validators=[DataRequired()])
 
-class RegisterForm(LoginForm):
+class RegisterForm(LoginForm): # Inhertis LoginForm
     password = PasswordField("Password", validators=[
         DataRequired(),
         EqualTo('repassword', message="Passwords must match.")
